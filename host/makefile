@@ -8,7 +8,7 @@ CFLAGS+= -DHOST_STANDALONE
 else
 CFLAGS+= -I../ -I ${EPIPHANY_HOME}/tools/host/include -D__HOST__ -Dasm=__asm__ -Drestrict=
 OBJECTS+=device-support.o
-CC=arm-linux-gnueabihf-gcc
+CC?=arm-linux-gnueabihf-gcc
 LDFLAGS=-L ${EPIPHANY_HOME}/tools/host/lib
 LIBS+=-le-hal -lrt
 ifneq (,$(wildcard ${EPIPHANY_HOME}/tools/host/lib/libe-loader.so))
